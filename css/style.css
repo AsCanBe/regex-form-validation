@@ -1,0 +1,26 @@
+.container {
+	display: flex;
+	align-items: center;
+	height: 100vh;
+}
+.flex-center {
+	margin: 0 auto;
+}
+form {
+	min-width: 500px;
+}
+p {
+	position: relative;
+	padding: 1em;
+}
+span {
+	border-radius: 5px;
+	display: none;
+	position: absolute;
+	left: 105%;
+	top: 25px;
+	width: 160px;
+	font-size: .9em;
+	padding: .5em 1em;
+	color: #fff;
+}
