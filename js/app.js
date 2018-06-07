@@ -21,6 +21,12 @@ function isValidEmail(email) {
 	return /^[^@]+@[^@]+\.[a-z]+$/i.test(email);
 }
 
+// Formatting functions 
+function formatTelephone(text) {
+	const regex = /^(\d{5})\s*(\d{3})\s*(\d{3})\s*$/;
+	return text.replace(regex, '$1 $2$3');
+}
+
 //Utility functions
 function showOrHideTip(show, element) {
   if (show) {
@@ -45,6 +51,10 @@ usernameInput.addEventListener("input", createListener(isValidUsername));
 passwordInput.addEventListener("input", createListener(isValidPassword));
 
 telephoneInput.addEventListener("input", createListener(isValidTelephone));
+
+telephoneInput.addEventListener("blur", e => {
+	e.target.value = formatTelephone(e.target.value);
+});
 
 emailInput.addEventListener("input", createListener(isValidEmail));
 
